@@ -1,11 +1,11 @@
-D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.Domain.dll
-D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.csprojAssemblyReference.cache
-D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.AssemblyInfoInputs.cache
-D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.AssemblyInfo.cs
 D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.DataAccess.deps.json
 D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.DataAccess.dll
 D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.DataAccess.pdb
+D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.Domain.dll
 D:\FPIS\FPIS\FPIS.DataAccess\bin\Debug\netcoreapp3.1\FPIS.Domain.pdb
+D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.csprojAssemblyReference.cache
+D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.AssemblyInfoInputs.cache
+D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.AssemblyInfo.cs
 D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.csproj.CoreCompileInputs.cache
 D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.csproj.CopyComplete
 D:\FPIS\FPIS\FPIS.DataAccess\obj\Debug\netcoreapp3.1\FPIS.DataAccess.dll

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FPIS.Domain
+﻿namespace FPIS.Domain
 {
     public class BaseEntity
     {

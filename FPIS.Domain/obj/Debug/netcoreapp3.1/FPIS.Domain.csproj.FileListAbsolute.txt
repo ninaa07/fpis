@@ -1,7 +1,6 @@
 D:\FPIS\FPIS\FPIS.Domain\bin\Debug\netcoreapp3.1\FPIS.Domain.deps.json
 D:\FPIS\FPIS\FPIS.Domain\bin\Debug\netcoreapp3.1\FPIS.Domain.dll
 D:\FPIS\FPIS\FPIS.Domain\bin\Debug\netcoreapp3.1\FPIS.Domain.pdb
-D:\FPIS\FPIS\FPIS.Domain\obj\Debug\netcoreapp3.1\FPIS.Domain.csprojAssemblyReference.cache
 D:\FPIS\FPIS\FPIS.Domain\obj\Debug\netcoreapp3.1\FPIS.Domain.AssemblyInfoInputs.cache
 D:\FPIS\FPIS\FPIS.Domain\obj\Debug\netcoreapp3.1\FPIS.Domain.AssemblyInfo.cs
 D:\FPIS\FPIS\FPIS.Domain\obj\Debug\netcoreapp3.1\FPIS.Domain.csproj.CoreCompileInputs.cache

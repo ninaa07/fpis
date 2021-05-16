@@ -1,6 +1,10 @@
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using FPIS.DataAccess;
+using FPIS.DataAccess.Repositories.Implementations;
+using FPIS.DataAccess.Repositories.Interfaces;
+using FPIS.Service.Implementations;
+using FPIS.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,10 +33,7 @@ public class Startup
 
         services.AddAutoMapper(typeof(Startup));
 
-        services.AddSwaggerGen(c =>
-        {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-        });
+        services.AddSwaggerGen();
 
         services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
         {
@@ -47,6 +48,9 @@ public class Startup
 
         //services.AddOpenApiDocument();
         services.AddControllers();
+
+        services.AddTransient<IDobavljacRepository, DobavljacRepository>();
+        services.AddTransient<IDobavljacService, DobavljacService>();
 
         services.AddAutoMapper(typeof(Startup));
         services.AddMvc().AddFluentValidation();
@@ -66,10 +70,14 @@ public class Startup
         }
 
         //app.UseOpenApi();
+
         app.UseSwaggerUI(c =>
         {
             c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            c.RoutePrefix = string.Empty;
         });
+
+        app.UseSwagger();
 
         app.UseStaticFiles();
 
