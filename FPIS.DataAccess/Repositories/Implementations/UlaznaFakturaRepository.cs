@@ -1,8 +1,7 @@
 ﻿using FPIS.DataAccess.Repositories.Interfaces;
 using FPIS.Domain;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FPIS.DataAccess.Repositories.Implementations
 {
@@ -11,6 +10,11 @@ namespace FPIS.DataAccess.Repositories.Implementations
         public UlaznaFakturaRepository(ApplicationContext context) : base(context)
         {
 
+        }
+
+        public IEnumerable<UlaznaFaktura> GetAllUfWithStavke()
+        {
+            return _context.UlaznaFaktura.Include(x => x.StavkeUlazneFakture);
         }
     }
 }

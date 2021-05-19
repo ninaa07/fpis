@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FPIS.DataAccess.Repositories.Interfaces;
 using FPIS.Domain;
-using FPIS.Service.Dtos;
 using FPIS.Service.Interfaces;
 using System.Collections.Generic;
 

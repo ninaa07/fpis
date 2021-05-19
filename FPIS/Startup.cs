@@ -52,6 +52,9 @@ public class Startup
         services.AddTransient<IDobavljacRepository, DobavljacRepository>();
         services.AddTransient<IDobavljacService, DobavljacService>();
 
+        services.AddTransient<IUlaznaFakturaRepository, UlaznaFakturaRepository>();
+        services.AddTransient<IUlaznaFakturaService, UlaznaFakturaService>();
+
         services.AddAutoMapper(typeof(Startup));
         services.AddMvc().AddFluentValidation();
         services.AddMvc(option => option.EnableEndpointRouting = false)

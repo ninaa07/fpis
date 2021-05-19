@@ -1,5 +1,4 @@
 ﻿using FPIS.Domain;
-using FPIS.Service.Dtos;
 using System.Collections.Generic;
 
 namespace FPIS.Service.Interfaces

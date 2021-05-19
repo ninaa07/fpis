@@ -57,7 +57,7 @@ namespace FPIS.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] EditDobavljacDto request)
+        public IActionResult Put(int id, [FromBody] EditUlaznaFakturaDto request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -73,7 +73,7 @@ namespace FPIS.Controllers
             _mapper.Map(request, dobavljac);
 
             var result = _dobavljacService.Update(dobavljac);
-            _mapper.Map<EditDobavljacDto>(result.ResultObject);
+            _mapper.Map<EditUlaznaFakturaDto>(result.ResultObject);
 
             if (result.Success)
                 return Ok(result);

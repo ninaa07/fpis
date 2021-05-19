@@ -11,6 +11,9 @@ namespace FPIS.DataAccess.Configurations
             base.Configure(builder);
 
             builder.Property(x => x.Naziv).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.DrzavaId).IsRequired();
+            builder.Property(x => x.GradId).IsRequired();
+            builder.Property(x => x.UlicaId).IsRequired();
 
             builder.HasOne(x => x.Drzava)
                 .WithMany(x => x.Dobavljaci)

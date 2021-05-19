@@ -7,5 +7,6 @@ namespace FPIS.DataAccess.Repositories.Interfaces
 {
     public interface IUlaznaFakturaRepository : IGenericRepository<UlaznaFaktura>
     {
+        IEnumerable<UlaznaFaktura> GetAllUfWithStavke();
     }
 }
