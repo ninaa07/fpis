@@ -164,6 +164,9 @@ namespace FPIS.DataAccess.Migrations
                     b.Property<int>("ProizvodId")
                         .HasColumnType("int");
 
+                    b.Property<int>("StatusStavke")
+                        .HasColumnType("int");
+
                     b.Property<int>("UlaznaFakturaId")
                         .HasColumnType("int");
 
@@ -253,7 +256,7 @@ namespace FPIS.DataAccess.Migrations
                     b.HasOne("FPIS.Domain.Ulica", "Ulica")
                         .WithMany("Dobavljaci")
                         .HasForeignKey("UlicaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Drzava");

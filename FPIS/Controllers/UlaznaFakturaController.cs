@@ -134,5 +134,17 @@ namespace FPIS.Controllers
 
             return BadRequest(result);
         }
+
+        [HttpGet("proizvodi")]
+        public IActionResult GetAllProizvodi()
+        {
+            return Ok(_ulaznaFakturaService.GetAllProizvodi());
+        }
+
+        [HttpGet("packingListe")]
+        public IActionResult GetAllPackingListe()
+        {
+            return Ok(_ulaznaFakturaService.GetAllPackingListe());
+        }
     }
 }

@@ -14,5 +14,9 @@ namespace FPIS.Service.Interfaces
         ServiceResult<UlaznaFaktura> Update(UlaznaFaktura ulaznaFaktura);
 
         ServiceResult<UlaznaFaktura> Delete(UlaznaFaktura ulaznaFaktura);
+
+        IEnumerable<Proizvod> GetAllProizvodi();
+
+        IEnumerable<PackingLista> GetAllPackingListe();
     }
 }

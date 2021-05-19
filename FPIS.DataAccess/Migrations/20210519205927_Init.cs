@@ -132,7 +132,7 @@ namespace FPIS.DataAccess.Migrations
                         column: x => x.UlicaId,
                         principalTable: "Ulica",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -189,7 +189,8 @@ namespace FPIS.DataAccess.Migrations
                     UlaznaFakturaId = table.Column<int>(type: "int", nullable: false),
                     Kolicina = table.Column<int>(type: "int", nullable: false),
                     Iznos = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ProizvodId = table.Column<int>(type: "int", nullable: false)
+                    ProizvodId = table.Column<int>(type: "int", nullable: false),
+                    StatusStavke = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FPIS.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210424180049_Init")]
+    [Migration("20210519205927_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,6 +166,9 @@ namespace FPIS.DataAccess.Migrations
                     b.Property<int>("ProizvodId")
                         .HasColumnType("int");
 
+                    b.Property<int>("StatusStavke")
+                        .HasColumnType("int");
+
                     b.Property<int>("UlaznaFakturaId")
                         .HasColumnType("int");
 
@@ -237,25 +240,25 @@ namespace FPIS.DataAccess.Migrations
                     b.HasOne("FPIS.Domain.Drzava", "Drzava")
                         .WithMany("Dobavljaci")
                         .HasForeignKey("DrzavaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("FPIS.Domain.Grad", "Grad")
                         .WithMany("Dobavljaci")
                         .HasForeignKey("GradId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("FPIS.Domain.Rang", "Rang")
                         .WithMany("Dobavljaci")
                         .HasForeignKey("RangId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("FPIS.Domain.Ulica", "Ulica")
                         .WithMany("Dobavljaci")
                         .HasForeignKey("UlicaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Drzava");
@@ -272,7 +275,7 @@ namespace FPIS.DataAccess.Migrations
                     b.HasOne("FPIS.Domain.Drzava", "Drzava")
                         .WithMany("Gradovi")
                         .HasForeignKey("DrzavaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Drzava");
@@ -324,13 +327,13 @@ namespace FPIS.DataAccess.Migrations
                     b.HasOne("FPIS.Domain.Drzava", "Drzava")
                         .WithMany()
                         .HasForeignKey("DrzavaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("FPIS.Domain.Grad", "Grad")
                         .WithMany("Ulice")
                         .HasForeignKey("GradId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Drzava");
