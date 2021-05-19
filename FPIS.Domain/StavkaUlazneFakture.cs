@@ -1,9 +1,15 @@
 ﻿namespace FPIS.Domain
 {
-    public class StavkaUlazneFakture
+    public enum StatusStavke
     {
-        public int Id { get; set; }
+        None,
+        Insert,
+        Update,
+        Delete
+    }
 
+    public class StavkaUlazneFakture : BaseEntity
+    {
         public int UlaznaFakturaId { get; set; }
 
         public int Kolicina { get; set; }
@@ -15,5 +21,7 @@
         public virtual UlaznaFaktura UlaznaFaktura { get; set; }
 
         public virtual Proizvod Proizvod { get; set; }
+
+        public StatusStavke StatusStavke { get; set; }
     }
 }

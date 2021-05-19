@@ -11,6 +11,7 @@ namespace FPIS.DataAccess.Configurations
             base.Configure(builder);
 
             builder.Property(x => x.Iznos).IsRequired();
+            builder.Property(x => x.PackingListaId).IsRequired();
 
             builder.HasOne(x => x.PackingLista)
                 .WithMany(x => x.UlazneFakture)

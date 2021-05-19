@@ -9,12 +9,21 @@ namespace FPIS.DataAccess.Repositories.Implementations
     {
         public UlaznaFakturaRepository(ApplicationContext context) : base(context)
         {
-
         }
 
         public IEnumerable<UlaznaFaktura> GetAllUfWithStavke()
         {
-            return _context.UlaznaFaktura.Include(x => x.StavkeUlazneFakture);
+            return _context.UlaznaFaktura.Include(x => x.StavkeUlazneFakture).ThenInclude(y => y.Proizvod);
+        }
+
+        public IEnumerable<Proizvod> GetAllProizvodi()
+        {
+            return _context.Proizvod;
+        }
+
+        public IEnumerable<PackingLista> GetAllPackingListe()
+        {
+            return _context.PackingLista;
         }
     }
 }

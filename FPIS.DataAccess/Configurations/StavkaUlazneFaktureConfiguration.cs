@@ -10,6 +10,8 @@ namespace FPIS.DataAccess.Configurations
         {
             builder.HasKey(x => new { x.Id, x.UlaznaFakturaId});
 
+            builder.Property(x => x.ProizvodId).IsRequired();
+
             builder.HasOne(x => x.UlaznaFaktura)
                  .WithMany(x => x.StavkeUlazneFakture)
                  .HasForeignKey(x => x.UlaznaFakturaId)

@@ -17,11 +17,13 @@ namespace FPIS.Controllers
     public class UlaznaFakturaController : ControllerBase
     {
         private readonly IUlaznaFakturaService _ulaznaFakturaService;
+        private readonly IStavkaUlazneFaktureService _stavkaUlazneFaktureService;
         private readonly IMapper _mapper;
 
-        public UlaznaFakturaController(IUlaznaFakturaService ulaznaFakturaService, IMapper mapper)
+        public UlaznaFakturaController(IUlaznaFakturaService ulaznaFakturaService, IMapper mapper, IStavkaUlazneFaktureService stavkaUlazneFaktureService)
         {
             _ulaznaFakturaService = ulaznaFakturaService;
+            _stavkaUlazneFaktureService = stavkaUlazneFaktureService;
             _mapper = mapper;
         }
 
@@ -52,15 +54,22 @@ namespace FPIS.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            foreach (var stavka in request.StavkeUlazneFakture)
-            {
-            }
-
             var ulaznaFaktura = _mapper.Map<UlaznaFaktura>(request);
 
-            _ulaznaFakturaService.Add(ulaznaFaktura);
+            var result = _ulaznaFakturaService.Add(ulaznaFaktura);
 
-            return Ok(ulaznaFaktura);
+            foreach (var stavka in request.StavkeUlazneFakture)
+            {
+                stavka.UlaznaFakturaId = result.ResultObject.Id;
+                var stavkaUlazneFakture = _mapper.Map<StavkaUlazneFakture>(stavka);
+
+                result.ResultObject.StavkeUlazneFakture.Add(stavkaUlazneFakture);
+                _stavkaUlazneFaktureService.Add(stavkaUlazneFakture);
+            }
+
+            var response = _mapper.Map<UlaznaFakturaDto>(result);
+
+            return Ok(response);
         }
 
         [HttpPut("{id}")]
@@ -81,7 +90,20 @@ namespace FPIS.Controllers
 
             foreach (var stavka in ulaznaFaktura.StavkeUlazneFakture)
             {
-                
+                if (stavka.StatusStavke == StatusStavke.None)
+                    continue;
+
+                else if (stavka.StatusStavke == StatusStavke.Insert)
+                {
+                    stavka.UlaznaFakturaId = ulaznaFaktura.Id;
+                    _stavkaUlazneFaktureService.Add(stavka);
+                }
+
+                else if (stavka.StatusStavke == StatusStavke.Update)
+                    _stavkaUlazneFaktureService.Update(stavka);
+
+                else
+                    _stavkaUlazneFaktureService.Delete(stavka);
             }
 
             var result = _ulaznaFakturaService.Update(ulaznaFaktura);

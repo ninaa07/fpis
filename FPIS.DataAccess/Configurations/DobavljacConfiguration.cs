@@ -14,6 +14,7 @@ namespace FPIS.DataAccess.Configurations
             builder.Property(x => x.DrzavaId).IsRequired();
             builder.Property(x => x.GradId).IsRequired();
             builder.Property(x => x.UlicaId).IsRequired();
+            builder.Property(x => x.RangId).IsRequired();
 
             builder.HasOne(x => x.Drzava)
                 .WithMany(x => x.Dobavljaci)
