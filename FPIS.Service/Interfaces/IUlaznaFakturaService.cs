@@ -18,5 +18,7 @@ namespace FPIS.Service.Interfaces
         IEnumerable<Proizvod> GetAllProizvodi();
 
         IEnumerable<PackingLista> GetAllPackingListe();
+
+        IEnumerable<Rang> GetAllRangovi();
     }
 }

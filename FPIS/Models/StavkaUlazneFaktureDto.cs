@@ -1,4 +1,6 @@
-﻿namespace FPIS.Models
+﻿using FPIS.Domain;
+
+namespace FPIS.Models
 {
     public class StavkaUlazneFaktureDto
     {
@@ -11,5 +13,7 @@
         public decimal Iznos { get; set; }
 
         public int ProizvodId { get; set; }
+
+        public StatusStavke StatusStavke { get; set; }
     }
 }

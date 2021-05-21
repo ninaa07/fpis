@@ -8,5 +8,6 @@ namespace FPIS.DataAccess.Repositories.Interfaces
         IEnumerable<UlaznaFaktura> GetAllUfWithStavke();
         IEnumerable<Proizvod> GetAllProizvodi();
         IEnumerable<PackingLista> GetAllPackingListe();
+        IEnumerable<Rang> GetAllRangovi();
     }
 }

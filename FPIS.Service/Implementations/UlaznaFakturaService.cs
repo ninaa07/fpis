@@ -29,6 +29,11 @@ namespace FPIS.Service.Implementations
             return _ulaznaFakturaRepository.GetAllPackingListe();
         }
 
+        public IEnumerable<Rang> GetAllRangovi()
+        {
+            return _ulaznaFakturaRepository.GetAllRangovi();
+        }
+
         public UlaznaFaktura Get(int id)
         {
             return _ulaznaFakturaRepository.GetAllUfWithStavke().FirstOrDefault(x => x.Id == id);

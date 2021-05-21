@@ -1,5 +1,6 @@
 ﻿using FPIS.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace FPIS.Models
 {
@@ -12,5 +13,7 @@ namespace FPIS.Models
         public Status Status { get; set; }
 
         public int PackingListaId { get; set; }
+
+        public IEnumerable<StavkaUlazneFaktureDto> StavkeUlazneFakture { get; set; }
     }
 }

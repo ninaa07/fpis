@@ -58,16 +58,15 @@ namespace FPIS.Controllers
 
             var result = _ulaznaFakturaService.Add(ulaznaFaktura);
 
-            foreach (var stavka in request.StavkeUlazneFakture)
-            {
-                stavka.UlaznaFakturaId = result.ResultObject.Id;
-                var stavkaUlazneFakture = _mapper.Map<StavkaUlazneFakture>(stavka);
+            //foreach (var stavka in request.StavkeUlazneFakture)
+            //{
+            //    stavka.UlaznaFakturaId = result.ResultObject.Id;
+            //    var stavkaUlazneFakture = _mapper.Map<StavkaUlazneFakture>(stavka);
 
-                result.ResultObject.StavkeUlazneFakture.Add(stavkaUlazneFakture);
-                _stavkaUlazneFaktureService.Add(stavkaUlazneFakture);
-            }
+            //    _stavkaUlazneFaktureService.Add(stavkaUlazneFakture);
+            //}
 
-            var response = _mapper.Map<UlaznaFakturaDto>(result);
+            var response = _mapper.Map<UlaznaFakturaDto>(result.ResultObject);
 
             return Ok(response);
         }
@@ -88,23 +87,23 @@ namespace FPIS.Controllers
 
             _mapper.Map(request, ulaznaFaktura);
 
-            foreach (var stavka in ulaznaFaktura.StavkeUlazneFakture)
-            {
-                if (stavka.StatusStavke == StatusStavke.None)
-                    continue;
+            //foreach (var stavka in ulaznaFaktura.StavkeUlazneFakture)
+            //{
+            //    if (stavka.StatusStavke == StatusStavke.None)
+            //        continue;
 
-                else if (stavka.StatusStavke == StatusStavke.Insert)
-                {
-                    stavka.UlaznaFakturaId = ulaznaFaktura.Id;
-                    _stavkaUlazneFaktureService.Add(stavka);
-                }
+            //    else if (stavka.StatusStavke == StatusStavke.Insert)
+            //    {
+            //        stavka.UlaznaFakturaId = ulaznaFaktura.Id;
+            //        _stavkaUlazneFaktureService.Add(stavka);
+            //    }
 
-                else if (stavka.StatusStavke == StatusStavke.Update)
-                    _stavkaUlazneFaktureService.Update(stavka);
+            //    else if (stavka.StatusStavke == StatusStavke.Update)
+            //        _stavkaUlazneFaktureService.Update(stavka);
 
-                else
-                    _stavkaUlazneFaktureService.Delete(stavka);
-            }
+            //    else
+            //        _stavkaUlazneFaktureService.Delete(stavka);
+            //}
 
             var result = _ulaznaFakturaService.Update(ulaznaFaktura);
 
@@ -135,16 +134,22 @@ namespace FPIS.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("proizvodi")]
+        [HttpGet("proizvod")]
         public IActionResult GetAllProizvodi()
         {
             return Ok(_ulaznaFakturaService.GetAllProizvodi());
         }
 
-        [HttpGet("packingListe")]
+        [HttpGet("packinglista")]
         public IActionResult GetAllPackingListe()
         {
             return Ok(_ulaznaFakturaService.GetAllPackingListe());
+        }
+
+        [HttpGet("rang")]
+        public IActionResult GetAllRangovi()
+        {
+            return Ok(_ulaznaFakturaService.GetAllRangovi());
         }
     }
 }

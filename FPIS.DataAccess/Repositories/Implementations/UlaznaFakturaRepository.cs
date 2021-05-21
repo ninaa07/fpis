@@ -25,5 +25,10 @@ namespace FPIS.DataAccess.Repositories.Implementations
         {
             return _context.PackingLista;
         }
+
+        public IEnumerable<Rang> GetAllRangovi()
+        {
+            return _context.Rang;
+        }
     }
 }
