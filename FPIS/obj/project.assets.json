@@ -9396,6 +9396,7 @@
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
+      "FPIS.DataAccess >= 1.0.0",
       "FPIS.Service >= 1.0.0",
       "FluentValidation.AspNetCore >= 10.0.0",
       "Microsoft.AspNetCore.Mvc.Abstractions >= 2.2.0",
@@ -9414,28 +9415,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KatarinaPerovic\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\KatarinaPetronijevic\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPIS\\FPIS\\FPIS\\FPIS.csproj",
+      "projectUniqueName": "D:\\FPIS\\FPIS\\FPIS.csproj",
       "projectName": "FPIS",
-      "projectPath": "D:\\FPIS\\FPIS\\FPIS\\FPIS.csproj",
-      "packagesPath": "C:\\Users\\KatarinaPerovic\\.nuget\\packages\\",
-      "outputPath": "D:\\FPIS\\FPIS\\FPIS\\obj\\",
+      "projectPath": "D:\\FPIS\\FPIS\\FPIS.csproj",
+      "packagesPath": "C:\\Users\\KatarinaPetronijevic\\.nuget\\packages\\",
+      "outputPath": "D:\\FPIS\\FPIS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\KatarinaPerovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\KatarinaPetronijevic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -9448,8 +9445,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\FPIS\\FPIS\\FPIS.Service\\FPIS.Service.csproj": {
-              "projectPath": "D:\\FPIS\\FPIS\\FPIS.Service\\FPIS.Service.csproj"
+            "D:\\FPIS\\FPIS.DataAccess\\FPIS.DataAccess.csproj": {
+              "projectPath": "D:\\FPIS\\FPIS.DataAccess\\FPIS.DataAccess.csproj"
+            },
+            "D:\\FPIS\\FPIS.Service\\FPIS.Service.csproj": {
+              "projectPath": "D:\\FPIS\\FPIS.Service\\FPIS.Service.csproj"
             }
           }
         }

@@ -20,12 +20,12 @@ namespace FPIS.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetAll()
+        [HttpGet("search")]
+        public IActionResult Search([FromQuery] string searchTerm = null)
         {
-            return Ok(_dobavljacService.GetAll());
+            return Ok(_dobavljacService.Search(searchTerm));
         }
-       
+
         [HttpGet("{id}", Name = "GetDobavljac")]
         public IActionResult Get(int id)
         {
@@ -39,7 +39,7 @@ namespace FPIS.Controllers
 
             return Ok(dobavljac);
         }
-       
+
         [HttpPost]
         public IActionResult Post([FromBody] DobavljacDto request)
         {
@@ -57,7 +57,7 @@ namespace FPIS.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] EditUlaznaFakturaDto request)
+        public IActionResult Put(int id, [FromBody] EditDobavljacDto request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -73,7 +73,6 @@ namespace FPIS.Controllers
             _mapper.Map(request, dobavljac);
 
             var result = _dobavljacService.Update(dobavljac);
-            _mapper.Map<EditUlaznaFakturaDto>(result.ResultObject);
 
             if (result.Success)
                 return Ok(result);
@@ -106,16 +105,22 @@ namespace FPIS.Controllers
             return Ok(_dobavljacService.GetAllDrzava());
         }
 
-        [HttpGet("grad")]
-        public IActionResult GetAllGrad()
+        [HttpGet("grad/{drzavaId}")]
+        public IActionResult GetAllGrad(int drzavaId)
         {
-            return Ok(_dobavljacService.GetAllGrad());
+            return Ok(_dobavljacService.GetAllGrad(drzavaId));
         }
 
-        [HttpGet("ulica")]
-        public IActionResult GetAllUlica()
+        [HttpGet("ulica/{gradId}")]
+        public IActionResult GetAllUlica(int gradId)
         {
-            return Ok(_dobavljacService.GetAllUlica());
+            return Ok(_dobavljacService.GetAllUlica(gradId));
+        }
+
+        [HttpGet("rang")]
+        public IActionResult GetAllRangovi()
+        {
+            return Ok(_dobavljacService.GetAllRangovi());
         }
     }
 }

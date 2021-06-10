@@ -5,6 +5,8 @@ namespace FPIS.Service.Interfaces
 {
     public interface IUlaznaFakturaService
     {
+        IEnumerable<UlaznaFaktura> Search(string searchTerm, int status);
+
         IEnumerable<UlaznaFaktura> GetAll();
 
         UlaznaFaktura Get(int id);
@@ -18,7 +20,5 @@ namespace FPIS.Service.Interfaces
         IEnumerable<Proizvod> GetAllProizvodi();
 
         IEnumerable<PackingLista> GetAllPackingListe();
-
-        IEnumerable<Rang> GetAllRangovi();
     }
 }

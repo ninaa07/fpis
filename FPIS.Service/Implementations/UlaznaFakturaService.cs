@@ -1,19 +1,20 @@
 ﻿using FPIS.DataAccess.Repositories.Interfaces;
 using FPIS.Domain;
 using FPIS.Service.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace FPIS.Service.Implementations
 {
-    public class UlaznaFakturaService: IUlaznaFakturaService
+    public class UlaznaFakturaService : IUlaznaFakturaService
     {
         private readonly IUlaznaFakturaRepository _ulaznaFakturaRepository;
+
         public UlaznaFakturaService(IUlaznaFakturaRepository ulaznaFakturaRepository)
         {
             _ulaznaFakturaRepository = ulaznaFakturaRepository;
         }
+
         public IEnumerable<UlaznaFaktura> GetAll()
         {
             return _ulaznaFakturaRepository.GetAllUfWithStavke();
@@ -29,14 +30,14 @@ namespace FPIS.Service.Implementations
             return _ulaznaFakturaRepository.GetAllPackingListe();
         }
 
-        public IEnumerable<Rang> GetAllRangovi()
-        {
-            return _ulaznaFakturaRepository.GetAllRangovi();
-        }
-
         public UlaznaFaktura Get(int id)
         {
             return _ulaznaFakturaRepository.GetAllUfWithStavke().FirstOrDefault(x => x.Id == id);
+        }
+
+        public IEnumerable<UlaznaFaktura> Search(string searchTerm, int status)
+        {
+            return _ulaznaFakturaRepository.Search(searchTerm, status);
         }
 
         public ServiceResult<UlaznaFaktura> Add(UlaznaFaktura ulaznaFaktura)
@@ -47,15 +48,6 @@ namespace FPIS.Service.Implementations
 
             return new ServiceResult<UlaznaFaktura>(true, "Ulazna faktura je uspesno dodata.", ulaznaFaktura);
         }
-
-        //public ServiceResult<StavkaUlazneFakture> Add(StavkaUlazneFakture stavkaUlazneFakture)
-        //{
-        //    _ulaznaFakturaRepository.Add(stavkaUlazneFakture);
-
-        //    _ulaznaFakturaRepository.SaveChanges();
-
-        //    return new ServiceResult<UlaznaFaktura>(true, "Ulazna faktura je uspesno dodata.", ulaznaFaktura);
-        //}
 
         public ServiceResult<UlaznaFaktura> Update(UlaznaFaktura ulaznaFaktura)
         {
@@ -72,7 +64,7 @@ namespace FPIS.Service.Implementations
 
             _ulaznaFakturaRepository.SaveChanges();
 
-            return new ServiceResult<UlaznaFaktura>(true, "Ulazna faktura uspesno izbrisan.");
+            return new ServiceResult<UlaznaFaktura>(true, "Ulazna faktura uspesno izbrisan.", ulaznaFaktura);
         }
     }
 }

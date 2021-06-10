@@ -12,3 +12,17 @@ D:\FPIS\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.csproj.CoreCompil
 D:\FPIS\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.csproj.CopyComplete
 D:\FPIS\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.dll
 D:\FPIS\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.pdb
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.Service.deps.json
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.Service.dll
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.Service.pdb
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.DataAccess.dll
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.Domain.dll
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.DataAccess.pdb
+D:\FPIS\FPIS.Service\bin\Debug\netcoreapp3.1\FPIS.Domain.pdb
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.csprojAssemblyReference.cache
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.AssemblyInfoInputs.cache
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.AssemblyInfo.cs
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.csproj.CoreCompileInputs.cache
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.csproj.CopyComplete
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.dll
+D:\FPIS\FPIS.Service\obj\Debug\netcoreapp3.1\FPIS.Service.pdb

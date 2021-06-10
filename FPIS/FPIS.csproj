@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FPIS.DataAccess\FPIS.DataAccess.csproj" />
     <ProjectReference Include="..\FPIS.Service\FPIS.Service.csproj" />
   </ItemGroup>
 

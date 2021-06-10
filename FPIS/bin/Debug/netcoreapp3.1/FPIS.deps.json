@@ -33,6 +33,7 @@
         "dependencies": {
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "FPIS.DataAccess": "1.0.0",
           "FPIS.Service": "1.0.0",
           "FluentValidation.AspNetCore": "10.0.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",

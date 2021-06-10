@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using FPIS.DataAccess.Repositories.Interfaces;
+﻿using FPIS.DataAccess.Repositories.Interfaces;
 using FPIS.Domain;
 using FPIS.Service.Interfaces;
 using System.Collections.Generic;
@@ -15,28 +14,34 @@ namespace FPIS.Service.Implementations
             _dobavljacRepository = dobavljacRepository;
         }
 
-        public IEnumerable<Dobavljac> GetAll()
+        public IEnumerable<Dobavljac> Search(string searchTerm)
         {
-            return _dobavljacRepository.GetAll();
+            return _dobavljacRepository.Search(searchTerm);
         }
 
         public IEnumerable<Drzava> GetAllDrzava()
         {
             return _dobavljacRepository.GetAllDrzava();
         }
-        public IEnumerable<Grad> GetAllGrad()
+
+        public IEnumerable<Grad> GetAllGrad(int drzavaId)
         {
-            return _dobavljacRepository.GetAllGrad();
+            return _dobavljacRepository.GetAllGrad(drzavaId);
         }
 
-        public IEnumerable<Ulica> GetAllUlica()
+        public IEnumerable<Ulica> GetAllUlica(int gradId)
         {
-            return _dobavljacRepository.GetAllUlica();
+            return _dobavljacRepository.GetAllUlica(gradId);
+        }
+
+        public IEnumerable<Rang> GetAllRangovi()
+        {
+            return _dobavljacRepository.GetAllRangovi();
         }
 
         public Dobavljac Get(int id)
         {
-            return _dobavljacRepository.Get(id);
+            return _dobavljacRepository.GetDobavljac(id);
         }
 
         public ServiceResult<Dobavljac> Add(Dobavljac dobavljac)
@@ -45,7 +50,7 @@ namespace FPIS.Service.Implementations
 
             _dobavljacRepository.SaveChanges();
 
-            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno dodat.", dobavljac);
+            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno dodat.", Get(dobavljac.Id));
         }
 
         public ServiceResult<Dobavljac> Update(Dobavljac dobavljac)
@@ -54,7 +59,7 @@ namespace FPIS.Service.Implementations
 
             _dobavljacRepository.SaveChanges();
 
-            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno izmenjen.", dobavljac);
+            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno izmenjen.", Get(dobavljac.Id));
         }
 
         public ServiceResult<Dobavljac> Delete(Dobavljac dobavljac)
@@ -63,7 +68,7 @@ namespace FPIS.Service.Implementations
 
             _dobavljacRepository.SaveChanges();
 
-            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno izbrisan.");
+            return new ServiceResult<Dobavljac>(true, "Dobavljac uspesno izbrisan.", dobavljac);
         }
     }
 }

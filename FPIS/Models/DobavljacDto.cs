@@ -11,5 +11,6 @@
         public int UlicaId { get; set; }
 
         public int RangId { get; set; }
+
     }
 }
